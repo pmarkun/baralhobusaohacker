@@ -1,0 +1,69 @@
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+        <title>Card</title>
+        <script language="javascript" type="text/javascript" src="./vendor/jquery.js"></script>
+        <script language="javascript" type="text/javascript" src="./vendor/ICanHaz.min.js"></script>
+        <script language="javascript" type="text/javascript" src="./js/main.js"></script>
+    
+        <link href='http://fonts.googleapis.com/css?family=Montserrat:700' rel='stylesheet' type='text/css'>    
+        <link rel="stylesheet" type="text/css" href="./css/main.css" />
+        <link rel="stylesheet" type="text/css" href="./css/cards.css" />
+    
+    
+    <script id="card" type="text/html">
+        <div id="{{id}}" class="card {{naipe}}">
+            <div class="topo">
+                <span class="numero">{{numero}}&{{naipe}};</span>
+            </div>
+            
+            <div class="miolo">
+                <div class="picture" style="background-image:url('cartas/{{id}}.jpg');"></div>
+                <div class="nome">{{nome}}</div>
+            </div>
+            
+            <div class="pe">
+                <span class="numero">{{numero}}&{{naipe}};</span>
+            </div>
+        </div>
+    
+    </script>
+    
+    <script>
+        $(document).ready(function () {
+            var card1 = {
+                id : "10h",
+                nome : "Evelyn",
+                naipe: "hearts",
+                numero: "10"
+            }
+            
+            var card2 = {
+                    id : "Ks",
+                    nome : "Belasco",
+                    naipe : "spades",
+                    numero : "K"
+            }
+            
+            var card3 = {
+                id : "Qd",
+                nome : "Liane",
+                naipe : "diams",
+                numero : "Q"
+            }
+            r_card = ich.card(card1);
+            f_card = ich.card(card2);
+            d_card = ich.card(card3);
+            $("#container").append(r_card);
+            $("#container").append(f_card);
+            $("#container").append(d_card);
+        });
+    </script>
+    </head>
+    
+    <body>
+        <div id="container">
+        
+        </div>
+    </body>
+</html>
